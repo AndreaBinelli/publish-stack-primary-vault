@@ -23,6 +23,15 @@ commands:
 workspace:
     vaults:
         -
+            fsPath: >-
+                dependencies/github.com/AndreaBinelli/publish-stack-secondary-vault
+            remote:
+                type: git
+                url: >-
+                    https://github.com/AndreaBinelli/publish-stack-secondary-vault
+            selfContained: true
+            name: publish-stack-secondary-vault
+        -
             fsPath: .
             selfContained: true
             name: publish-stack-primary-vault
@@ -105,3 +114,8 @@ publishing:
     enableTaskNotes: true
     enablePrettyLinks: true
     searchMode: search
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - publish-stack-secondary-vault
+            - publish-stack-primary-vault
